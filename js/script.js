@@ -47,9 +47,33 @@ function initializeApp() {
 
 // Configuración de event listeners
 function setupEventListeners() {
+    // Navegación hamburguesa
+    const navToggle = document.getElementById('navToggle');
+    const navButtons = document.getElementById('navButtons');
+    
+    if (navToggle && navButtons) {
+        navToggle.addEventListener('click', function() {
+            toggleMobileNav();
+        });
+        
+        // Cerrar menú al hacer click en un botón de navegación
+        navButtons.addEventListener('click', function(e) {
+            if (e.target.classList.contains('nav-btn') || e.target.closest('.nav-btn')) {
+                closeMobileNav();
+            }
+        });
+        
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navButtons.contains(e.target)) {
+                closeMobileNav();
+            }
+        });
+    }
+    
     // Navegación entre secciones
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(button => {
+    const navBtns = document.querySelectorAll('.nav-btn');
+    navBtns.forEach(button => {
         button.addEventListener('click', handleNavigation);
     });
     
@@ -747,11 +771,87 @@ function animateBackgroundGradient() {
 }
 
 // Exportar funciones para uso global
+// Funciones para navegación móvil
+function toggleMobileNav() {
+    const navToggle = document.getElementById('navToggle');
+    const navButtons = document.getElementById('navButtons');
+    
+    if (navToggle && navButtons) {
+        navToggle.classList.toggle('active');
+        navButtons.classList.toggle('show');
+        
+        // Agregar aria-expanded para accesibilidad
+        const isExpanded = navButtons.classList.contains('show');
+        navToggle.setAttribute('aria-expanded', isExpanded);
+        
+        // Prevenir scroll del body cuando el menú está abierto
+        if (isExpanded) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+}
+
+function closeMobileNav() {
+    const navToggle = document.getElementById('navToggle');
+    const navButtons = document.getElementById('navButtons');
+    
+    if (navToggle && navButtons) {
+        navToggle.classList.remove('active');
+        navButtons.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+}
+
+function openMobileNav() {
+    const navToggle = document.getElementById('navToggle');
+    const navButtons = document.getElementById('navButtons');
+    
+    if (navToggle && navButtons) {
+        navToggle.classList.add('active');
+        navButtons.classList.add('show');
+        navToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Manejar cambios de tamaño de ventana
+function handleNavResize() {
+    const navButtons = document.getElementById('navButtons');
+    const navToggle = document.getElementById('navToggle');
+    
+    if (window.innerWidth > 768) {
+        // En pantallas grandes, mostrar siempre la navegación
+        if (navButtons) {
+            navButtons.classList.remove('show');
+            navButtons.style.display = 'flex';
+        }
+        if (navToggle) {
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+        document.body.style.overflow = '';
+    } else {
+        // En pantallas pequeñas, ocultar por defecto
+        if (navButtons && !navButtons.classList.contains('show')) {
+            navButtons.style.display = 'none';
+        }
+    }
+}
+
+// Agregar listener para cambios de tamaño
+window.addEventListener('resize', debounce(handleNavResize, 250));
+
 window.MyMelodyMap = {
     navigateToSection,
     showModelDetails,
     hideModelDetails,
     triggerElementAnimation,
+    toggleMobileNav,
+    closeMobileNav,
+    openMobileNav,
     AppState
 };
 
