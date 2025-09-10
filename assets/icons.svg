@@ -1,0 +1,337 @@
+<!-- Iconos SVG personalizados para el Mapa Comparativo My Melody -->
+<!-- Desarrollado para el Taller 1 COIL -->
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  
+  <!-- Icono de Corazón My Melody -->
+  <symbol id="heart-melody" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#f295be;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path d="M50,85 C50,85 20,60 20,40 C20,25 30,15 45,20 C50,22 50,22 55,20 C70,15 80,25 80,40 C80,60 50,85 50,85 Z" 
+          fill="url(#heartGradient)" stroke="#e36aa5" stroke-width="2"/>
+    <circle cx="35" cy="35" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="65" cy="35" r="3" fill="#ffffff" opacity="0.8"/>
+  </symbol>
+  
+  <!-- Icono de Persona -->
+  <symbol id="person-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="personGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#efafd8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="30" r="15" fill="url(#personGradient)"/>
+    <path d="M25,85 Q25,65 50,65 Q75,65 75,85 Z" fill="url(#personGradient)"/>
+    <circle cx="45" cy="27" r="2" fill="#e36aa5"/>
+    <circle cx="55" cy="27" r="2" fill="#e36aa5"/>
+    <path d="M45,35 Q50,38 55,35" stroke="#e36aa5" stroke-width="2" fill="none"/>
+  </symbol>
+  
+  <!-- Icono de Familia -->
+  <symbol id="family-icon" viewBox="0 0 120 100">
+    <defs>
+      <linearGradient id="familyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#f1bcd4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#ffa0ce;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Adulto 1 -->
+    <circle cx="30" cy="25" r="12" fill="url(#familyGradient)"/>
+    <path d="M15,75 Q15,60 30,60 Q45,60 45,75 Z" fill="url(#familyGradient)"/>
+    <!-- Adulto 2 -->
+    <circle cx="70" cy="25" r="12" fill="url(#familyGradient)"/>
+    <path d="M55,75 Q55,60 70,60 Q85,60 85,75 Z" fill="url(#familyGradient)"/>
+    <!-- Niño -->
+    <circle cx="50" cy="35" r="8" fill="url(#familyGradient)"/>
+    <path d="M40,75 Q40,65 50,65 Q60,65 60,75 Z" fill="url(#familyGradient)"/>
+    <!-- Conexiones -->
+    <path d="M30,40 Q40,45 50,45 Q60,45 70,40" stroke="#e36aa5" stroke-width="2" fill="none"/>
+  </symbol>
+  
+  <!-- Icono de Red Social -->
+  <symbol id="network-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#efafd8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Nodos -->
+    <circle cx="50" cy="50" r="8" fill="url(#networkGradient)"/>
+    <circle cx="25" cy="25" r="6" fill="url(#networkGradient)"/>
+    <circle cx="75" cy="25" r="6" fill="url(#networkGradient)"/>
+    <circle cx="25" cy="75" r="6" fill="url(#networkGradient)"/>
+    <circle cx="75" cy="75" r="6" fill="url(#networkGradient)"/>
+    <!-- Conexiones -->
+    <line x1="50" y1="50" x2="25" y2="25" stroke="#f295be" stroke-width="3"/>
+    <line x1="50" y1="50" x2="75" y2="25" stroke="#f295be" stroke-width="3"/>
+    <line x1="50" y1="50" x2="25" y2="75" stroke="#f295be" stroke-width="3"/>
+    <line x1="50" y1="50" x2="75" y2="75" stroke="#f295be" stroke-width="3"/>
+  </symbol>
+  
+  <!-- Icono de Proceso -->
+  <symbol id="process-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#f1bcd4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="10" y="20" width="25" height="15" rx="3" fill="url(#processGradient)"/>
+    <rect x="45" y="20" width="25" height="15" rx="3" fill="url(#processGradient)"/>
+    <rect x="10" y="45" width="25" height="15" rx="3" fill="url(#processGradient)"/>
+    <rect x="45" y="45" width="25" height="15" rx="3" fill="url(#processGradient)"/>
+    <rect x="27" y="70" width="25" height="15" rx="3" fill="url(#processGradient)"/>
+    <!-- Flechas -->
+    <path d="M35,27 L40,27" stroke="#e36aa5" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M22,35 L22,40" stroke="#e36aa5" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M35,52 L40,52" stroke="#e36aa5" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M39,60 L39,65" stroke="#e36aa5" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#e36aa5"/>
+      </marker>
+    </defs>
+  </symbol>
+  
+  <!-- Icono de Evaluación -->
+  <symbol id="evaluation-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="evalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="20" y="15" width="60" height="70" rx="5" fill="url(#evalGradient)" stroke="#e36aa5" stroke-width="2"/>
+    <line x1="30" y1="30" x2="70" y2="30" stroke="#ffffff" stroke-width="2"/>
+    <line x1="30" y1="45" x2="60" y2="45" stroke="#ffffff" stroke-width="2"/>
+    <line x1="30" y1="60" x2="65" y2="60" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="25" cy="30" r="2" fill="#ffffff"/>
+    <circle cx="25" cy="45" r="2" fill="#ffffff"/>
+    <circle cx="25" cy="60" r="2" fill="#ffffff"/>
+    <path d="M65,70 L70,75 L80,65" stroke="#ffffff" stroke-width="3" fill="none"/>
+  </symbol>
+  
+  <!-- Icono de Coordinación -->
+  <symbol id="coordination-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="coordGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#efafd8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="30" fill="none" stroke="url(#coordGradient)" stroke-width="4"/>
+    <circle cx="50" cy="20" r="8" fill="url(#coordGradient)"/>
+    <circle cx="80" cy="50" r="8" fill="url(#coordGradient)"/>
+    <circle cx="50" cy="80" r="8" fill="url(#coordGradient)"/>
+    <circle cx="20" cy="50" r="8" fill="url(#coordGradient)"/>
+    <circle cx="50" cy="50" r="5" fill="#e36aa5"/>
+    <!-- Líneas de coordinación -->
+    <line x1="50" y1="50" x2="50" y2="28" stroke="#f295be" stroke-width="2"/>
+    <line x1="50" y1="50" x2="72" y2="50" stroke="#f295be" stroke-width="2"/>
+    <line x1="50" y1="50" x2="50" y2="72" stroke="#f295be" stroke-width="2"/>
+    <line x1="50" y1="50" x2="28" y2="50" stroke="#f295be" stroke-width="2"/>
+  </symbol>
+  
+  <!-- Icono de Recursos -->
+  <symbol id="resources-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="resourceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#f1bcd4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="15" y="30" width="70" height="50" rx="5" fill="url(#resourceGradient)"/>
+    <rect x="25" y="20" width="50" height="10" rx="2" fill="url(#resourceGradient)"/>
+    <circle cx="35" cy="50" r="8" fill="#ffffff" opacity="0.8"/>
+    <circle cx="50" cy="50" r="8" fill="#ffffff" opacity="0.8"/>
+    <circle cx="65" cy="50" r="8" fill="#ffffff" opacity="0.8"/>
+    <text x="35" y="55" text-anchor="middle" fill="#e36aa5" font-size="8" font-weight="bold">R1</text>
+    <text x="50" y="55" text-anchor="middle" fill="#e36aa5" font-size="8" font-weight="bold">R2</text>
+    <text x="65" y="55" text-anchor="middle" fill="#e36aa5" font-size="8" font-weight="bold">R3</text>
+  </symbol>
+  
+  <!-- Icono de Seguimiento -->
+  <symbol id="monitoring-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="monitorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="35" fill="none" stroke="url(#monitorGradient)" stroke-width="4"/>
+    <circle cx="50" cy="50" r="3" fill="#e36aa5"/>
+    <line x1="50" y1="50" x2="50" y2="25" stroke="#e36aa5" stroke-width="3"/>
+    <line x1="50" y1="50" x2="65" y2="50" stroke="#e36aa5" stroke-width="2"/>
+    <!-- Marcadores de tiempo -->
+    <circle cx="50" cy="15" r="2" fill="#e36aa5"/>
+    <circle cx="85" cy="50" r="2" fill="#e36aa5"/>
+    <circle cx="50" cy="85" r="2" fill="#e36aa5"/>
+    <circle cx="15" cy="50" r="2" fill="#e36aa5"/>
+  </symbol>
+  
+  <!-- Icono de Integración -->
+  <symbol id="integration-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="integrationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#efafd8;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Círculos entrelazados -->
+    <circle cx="35" cy="40" r="20" fill="none" stroke="url(#integrationGradient)" stroke-width="4" opacity="0.8"/>
+    <circle cx="65" cy="40" r="20" fill="none" stroke="url(#integrationGradient)" stroke-width="4" opacity="0.8"/>
+    <circle cx="50" cy="60" r="20" fill="none" stroke="url(#integrationGradient)" stroke-width="4" opacity="0.8"/>
+    <!-- Centro de integración -->
+    <circle cx="50" cy="45" r="8" fill="url(#integrationGradient)"/>
+    <circle cx="50" cy="45" r="4" fill="#ffffff"/>
+  </symbol>
+  
+  <!-- Icono de Flor My Melody -->
+  <symbol id="flower-melody" viewBox="0 0 100 100">
+    <defs>
+      <radialGradient id="flowerGradient" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+        <stop offset="70%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </radialGradient>
+    </defs>
+    <!-- Pétalos -->
+    <ellipse cx="50" cy="30" rx="8" ry="15" fill="url(#flowerGradient)" transform="rotate(0 50 50)"/>
+    <ellipse cx="50" cy="30" rx="8" ry="15" fill="url(#flowerGradient)" transform="rotate(72 50 50)"/>
+    <ellipse cx="50" cy="30" rx="8" ry="15" fill="url(#flowerGradient)" transform="rotate(144 50 50)"/>
+    <ellipse cx="50" cy="30" rx="8" ry="15" fill="url(#flowerGradient)" transform="rotate(216 50 50)"/>
+    <ellipse cx="50" cy="30" rx="8" ry="15" fill="url(#flowerGradient)" transform="rotate(288 50 50)"/>
+    <!-- Centro -->
+    <circle cx="50" cy="50" r="8" fill="#f295be"/>
+    <circle cx="50" cy="50" r="4" fill="#ffffff" opacity="0.8"/>
+  </symbol>
+  
+  <!-- Icono de Estrella My Melody -->
+  <symbol id="star-melody" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path d="M50,10 L60,35 L85,35 L67,52 L75,77 L50,62 L25,77 L33,52 L15,35 L40,35 Z" 
+          fill="url(#starGradient)" stroke="#e36aa5" stroke-width="2"/>
+    <circle cx="50" cy="45" r="3" fill="#ffffff" opacity="0.9"/>
+  </symbol>
+  
+  <!-- Icono de Lazo My Melody -->
+  <symbol id="bow-melody" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="bowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffa0ce;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Lazo izquierdo -->
+    <path d="M20,50 Q10,30 30,40 Q40,45 35,55 Q25,65 15,50 Q20,40 20,50 Z" fill="url(#bowGradient)"/>
+    <!-- Lazo derecho -->
+    <path d="M80,50 Q90,30 70,40 Q60,45 65,55 Q75,65 85,50 Q80,40 80,50 Z" fill="url(#bowGradient)"/>
+    <!-- Centro del lazo -->
+    <ellipse cx="50" cy="50" rx="8" ry="12" fill="url(#bowGradient)"/>
+    <ellipse cx="50" cy="50" rx="4" ry="8" fill="#ffffff" opacity="0.7"/>
+  </symbol>
+  
+  <!-- Icono de Casa -->
+  <symbol id="home-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="homeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#f1bcd4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Techo -->
+    <path d="M15,50 L50,20 L85,50 Z" fill="url(#homeGradient)"/>
+    <!-- Casa -->
+    <rect x="25" y="50" width="50" height="35" fill="url(#homeGradient)"/>
+    <!-- Puerta -->
+    <rect x="45" y="65" width="10" height="20" fill="#e36aa5"/>
+    <!-- Ventanas -->
+    <rect x="32" y="57" width="8" height="8" fill="#ffffff" opacity="0.8"/>
+    <rect x="60" y="57" width="8" height="8" fill="#ffffff" opacity="0.8"/>
+    <!-- Detalles -->
+    <circle cx="47" cy="75" r="1" fill="#ffffff"/>
+  </symbol>
+  
+  <!-- Icono de Escuela -->
+  <symbol id="school-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="schoolGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#efafd8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f295be;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Edificio principal -->
+    <rect x="20" y="40" width="60" height="45" fill="url(#schoolGradient)"/>
+    <!-- Techo -->
+    <path d="M15,40 L50,15 L85,40 Z" fill="url(#schoolGradient)"/>
+    <!-- Puerta -->
+    <rect x="45" y="65" width="10" height="20" fill="#e36aa5"/>
+    <!-- Ventanas -->
+    <rect x="28" y="50" width="6" height="6" fill="#ffffff" opacity="0.8"/>
+    <rect x="38" y="50" width="6" height="6" fill="#ffffff" opacity="0.8"/>
+    <rect x="56" y="50" width="6" height="6" fill="#ffffff" opacity="0.8"/>
+    <rect x="66" y="50" width="6" height="6" fill="#ffffff" opacity="0.8"/>
+    <!-- Bandera -->
+    <line x1="50" y1="15" x2="50" y2="5" stroke="#e36aa5" stroke-width="2"/>
+    <rect x="50" y="5" width="8" height="5" fill="#ffa0ce"/>
+  </symbol>
+  
+  <!-- Icono de Hospital -->
+  <symbol id="hospital-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="hospitalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#f1bcd4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#e36aa5;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Edificio -->
+    <rect x="25" y="30" width="50" height="55" fill="url(#hospitalGradient)"/>
+    <!-- Cruz médica -->
+    <rect x="45" y="40" width="10" height="25" fill="#ffffff"/>
+    <rect x="37" y="48" width="26" height="9" fill="#ffffff"/>
+    <!-- Ventanas -->
+    <rect x="30" y="35" width="4" height="4" fill="#ffffff" opacity="0.7"/>
+    <rect x="66" y="35" width="4" height="4" fill="#ffffff" opacity="0.7"/>
+    <rect x="30" y="70" width="4" height="4" fill="#ffffff" opacity="0.7"/>
+    <rect x="66" y="70" width="4" height="4" fill="#ffffff" opacity="0.7"/>
+    <!-- Puerta -->
+    <rect x="45" y="75" width="10" height="10" fill="#e36aa5"/>
+  </symbol>
+  
+  <!-- Icono de Comunidad -->
+  <symbol id="community-icon" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="communityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#efafd8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#ffa0ce;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <!-- Personas en círculo -->
+    <circle cx="50" cy="25" r="6" fill="url(#communityGradient)"/>
+    <circle cx="75" cy="40" r="6" fill="url(#communityGradient)"/>
+    <circle cx="75" cy="65" r="6" fill="url(#communityGradient)"/>
+    <circle cx="50" cy="80" r="6" fill="url(#communityGradient)"/>
+    <circle cx="25" cy="65" r="6" fill="url(#communityGradient)"/>
+    <circle cx="25" cy="40" r="6" fill="url(#communityGradient)"/>
+    <!-- Conexiones -->
+    <circle cx="50" cy="52" r="25" fill="none" stroke="url(#communityGradient)" stroke-width="3" opacity="0.6"/>
+    <!-- Centro -->
+    <circle cx="50" cy="52" r="8" fill="url(#communityGradient)"/>
+    <text x="50" y="57" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold">C</text>
+  </symbol>
+
+</svg>

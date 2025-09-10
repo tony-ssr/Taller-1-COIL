@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Comparativo: Modelos de Intervención Social</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="animated-background">
+        <div class="floating-element" style="--delay: 0s; --duration: 8s;"></div>
+        <div class="floating-element" style="--delay: 2s; --duration: 10s;"></div>
+        <div class="floating-element" style="--delay: 4s; --duration: 12s;"></div>
+        <div class="floating-element" style="--delay: 6s; --duration: 9s;"></div>
+        <div class="floating-element" style="--delay: 1s; --duration: 11s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="university-info">
+                    <h1><i class="fas fa-graduation-cap"></i> Taller 1 COIL</h1>
+                    <p>Innovación En La Interacción Con Individuos</p>
+                    <div class="authors">
+                        <span><i class="fas fa-user"></i> Dayani Ramos Seña</span>
+                        <span><i class="fas fa-user"></i> Mariangel Vega Ceballos</span>
+                    </div>
+                    <div class="institutions">
+                        <span>Universidad Mariana • Universidad Luis Amigo</span>
+                        <span>Programa De Trabajo Social • 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Caso de estudio -->
+    <section class="case-study">
+        <div class="container">
+            <div class="case-card">
+                <div class="case-header">
+                    <i class="fas fa-user-friends"></i>
+                    <h2>Caso de Estudio: Juliana</h2>
+                </div>
+                <div class="case-content">
+                    <div class="case-details">
+                        <div class="detail-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>15 años de edad</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-baby"></i>
+                            <span>Embarazo de 2 meses</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-home"></i>
+                            <span>Conflicto familiar</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-school"></i>
+                            <span>Riesgo de deserción escolar</span>
+                        </div>
+                    </div>
+                    <p class="case-description">
+                        Juliana descubrió hace dos meses que está embarazada. Sus padres reaccionaron con enojo y decepción. 
+                        Ella ha pensado en abandonar el colegio porque siente rechazo de sus compañeros y no sabe cómo afrontar el futuro con un bebé.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegación de modelos -->
+    <nav class="models-nav">
+        <div class="container">
+            <div class="nav-buttons">
+                <button class="nav-btn active" data-target="gestion">
+                    <i class="fas fa-cogs"></i>
+                    <span>Modelo de Gestión de Casos</span>
+                </button>
+                <button class="nav-btn" data-target="psicosocial">
+                    <i class="fas fa-brain"></i>
+                    <span>Modelo Psicosocial</span>
+                </button>
+                <button class="nav-btn" data-target="comparacion">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>Comparación</span>
+                </button>
+                <button class="nav-btn" data-target="integracion">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>Enfoque Integrado</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Modelo de Gestión de Casos -->
+            <section id="gestion" class="model-section active">
+                <div class="model-header">
+                    <div class="model-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h2>Modelo de Gestión de Casos</h2>
+                    <p class="model-subtitle">Coordinación integral de servicios y recursos</p>
+                </div>
+                
+                <div class="process-flow">
+                    <div class="flow-step" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-handshake"></i> Contacto Inicial</h3>
+                            <p>Generar un espacio de contacto donde el respeto, la empatía y la objetividad primen, permitiendo una intervención cómoda para Juliana.</p>
+                            <ul>
+                                <li>Establecimiento de rapport</li>
+                                <li>Creación de ambiente seguro</li>
+                                <li>Evaluación inicial de necesidades</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-search"></i> Diagnóstico Integral</h3>
+                            <p>Realizar un diagnóstico inicial de todas las necesidades de Juliana en todos los ámbitos para garantizar una intervención pertinente.</p>
+                            <div class="diagnostic-areas">
+                                <span class="area-tag"><i class="fas fa-heartbeat"></i> Médicas</span>
+                                <span class="area-tag"><i class="fas fa-book"></i> Educativas</span>
+                                <span class="area-tag"><i class="fas fa-home"></i> Familiares</span>
+                                <span class="area-tag"><i class="fas fa-users"></i> Sociales</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-clipboard-list"></i> Plan de Intervención</h3>
+                            <p>Elaborar un plan integral con metas específicas adaptado a las necesidades, sentimientos y perspectivas de Juliana.</p>
+                            <div class="timeline-goals">
+                                <div class="goal-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Corto plazo: Estabilización emocional y familiar</span>
+                                </div>
+                                <div class="goal-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Mediano plazo: Continuidad educativa y atención médica</span>
+                                </div>
+                                <div class="goal-item">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>Largo plazo: Proyecto de vida sostenible</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-network-wired"></i> Actividades Específicas</h3>
+                            <p>Implementación de actividades concretas para fortalecer las redes de apoyo de Juliana.</p>
+                            <div class="activities-grid">
+                                <div class="activity-card">
+                                    <i class="fas fa-users"></i>
+                                    <h4>Grupos de Apoyo</h4>
+                                    <p>Vinculación a espacios colectivos de madres adolescentes</p>
+                                </div>
+                                <div class="activity-card">
+                                    <i class="fas fa-hospital"></i>
+                                    <h4>Servicios Médicos</h4>
+                                    <p>Conexión con servicios médicos estables y especializados</p>
+                                </div>
+                                <div class="activity-card">
+                                    <i class="fas fa-school"></i>
+                                    <h4>Apoyo Educativo</h4>
+                                    <p>Vinculación con servicios escolares adaptados</p>
+                                </div>
+                                <div class="activity-card">
+                                    <i class="fas fa-home"></i>
+                                    <h4>Dinámicas Familiares</h4>
+                                    <p>Mejoramiento de las relaciones familiares</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-chart-line"></i> Seguimiento y Evaluación</h3>
+                            <p>Acompañamiento integral que permita transformar el plan según las necesidades y cambios de Juliana.</p>
+                            <div class="monitoring-features">
+                                <div class="feature">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <span>Adaptabilidad continua</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-target"></i>
+                                    <span>Evaluación de objetivos</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Desarrollo de herramientas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-characteristics">
+                    <h3><i class="fas fa-star"></i> Características Principales</h3>
+                    <div class="characteristics-grid">
+                        <div class="char-item">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <h4>Multidimensional</h4>
+                            <p>Abarca todos los aspectos de la vida de Juliana</p>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-cog"></i>
+                            <h4>Coordinación</h4>
+                            <p>Gestión eficiente de servicios y recursos</p>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Duración Prolongada</h4>
+                            <p>Acompañamiento a largo plazo</p>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Rol de Gestor</h4>
+                            <p>Trabajador social como coordinador de recursos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modelo Psicosocial -->
+            <section id="psicosocial" class="model-section">
+                <div class="model-header">
+                    <div class="model-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h2>Modelo Psicosocial</h2>
+                    <p class="model-subtitle">Comprensión integral del entorno y dinámicas socio-emocionales</p>
+                </div>
+                
+                <div class="psychosocial-approach">
+                    <div class="approach-section">
+                        <div class="section-header">
+                            <i class="fas fa-eye"></i>
+                            <h3>Comprensión del Entorno</h3>
+                        </div>
+                        <div class="approach-content">
+                            <p>El modelo psicosocial aporta la importancia de comprender el entorno de Juliana, así como sus dinámicas sociales y emocionales. Su situación no puede entenderse de manera aislada.</p>
+                            <div class="environment-factors">
+                                <div class="factor-card">
+                                    <i class="fas fa-heart"></i>
+                                    <h4>Aspectos Emocionales</h4>
+                                    <ul>
+                                        <li>Autoestima y autoimagen</li>
+                                        <li>Manejo de emociones</li>
+                                        <li>Percepción del rechazo</li>
+                                        <li>Ansiedad y miedos</li>
+                                    </ul>
+                                </div>
+                                <div class="factor-card">
+                                    <i class="fas fa-users"></i>
+                                    <h4>Dinámicas Sociales</h4>
+                                    <ul>
+                                        <li>Relaciones familiares</li>
+                                        <li>Vínculos escolares</li>
+                                        <li>Redes de apoyo social</li>
+                                        <li>Estigma social</li>
+                                    </ul>
+                                </div>
+                                <div class="factor-card">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <h4>Contexto Sociocultural</h4>
+                                    <ul>
+                                        <li>Normas culturales</li>
+                                        <li>Expectativas sociales</li>
+                                        <li>Recursos comunitarios</li>
+                                        <li>Barreras estructurales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="approach-section">
+                        <div class="section-header">
+                            <i class="fas fa-link"></i>
+                            <h3>Articulación Psicológica y Social</h3>
+                        </div>
+                        <div class="approach-content">
+                            <p>La aplicación del modelo psicosocial posibilita un abordaje integral que articula lo psicológico y lo social, optimizando la efectividad del plan de intervención.</p>
+                            <div class="articulation-diagram">
+                                <div class="diagram-center">
+                                    <div class="center-circle">
+                                        <i class="fas fa-user"></i>
+                                        <span>Juliana</span>
+                                    </div>
+                                </div>
+                                <div class="diagram-elements">
+                                    <div class="element psychological">
+                                        <i class="fas fa-brain"></i>
+                                        <h4>Dimensión Psicológica</h4>
+                                        <ul>
+                                            <li>Procesamiento emocional</li>
+                                            <li>Mecanismos de afrontamiento</li>
+                                            <li>Desarrollo de la identidad</li>
+                                            <li>Toma de decisiones</li>
+                                        </ul>
+                                    </div>
+                                    <div class="element social">
+                                        <i class="fas fa-globe"></i>
+                                        <h4>Dimensión Social</h4>
+                                        <ul>
+                                            <li>Sistemas de apoyo</li>
+                                            <li>Roles sociales</li>
+                                            <li>Interacciones grupales</li>
+                                            <li>Influencias ambientales</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="approach-section">
+                        <div class="section-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Aportes Específicos al Caso</h3>
+                        </div>
+                        <div class="approach-content">
+                            <div class="contributions-grid">
+                                <div class="contribution-item">
+                                    <i class="fas fa-search-plus"></i>
+                                    <h4>Diagnóstico Enriquecido</h4>
+                                    <p>Comprensión amplia y específica de la situación mediante análisis contextual profundo</p>
+                                </div>
+                                <div class="contribution-item">
+                                    <i class="fas fa-arrows-alt"></i>
+                                    <h4>Transformación Contextual</h4>
+                                    <p>Orientación hacia el cambio de dinámicas familiares, escolares y sociales</p>
+                                </div>
+                                <div class="contribution-item">
+                                    <i class="fas fa-sync"></i>
+                                    <h4>Impacto Bidireccional</h4>
+                                    <p>Reconocimiento del impacto en Juliana y en quienes la rodean</p>
+                                </div>
+                                <div class="contribution-item">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                    <h4>Visión Holística</h4>
+                                    <p>Integración de factores individuales, familiares y sociales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-characteristics">
+                    <h3><i class="fas fa-star"></i> Características Principales</h3>
+                    <div class="characteristics-grid">
+                        <div class="char-item">
+                            <i class="fas fa-microscope"></i>
+                            <h4>Comprensión Profunda</h4>
+                            <p>Análisis detallado del contexto socio-emocional</p>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-heart-pulse"></i>
+                            <h4>Enfoque Terapéutico</h4>
+                            <p>Trabajador social como facilitador terapéutico</p>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <h4>Duración Flexible</h4>
+                            <p>Tiempo de intervención adaptado a necesidades</p>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Sistemas Interconectados</h4>
+                            <p>Reconocimiento de la interdependencia social</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparación -->
+            <section id="comparacion" class="model-section">
+                <div class="model-header">
+                    <div class="model-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h2>Análisis Comparativo</h2>
+                    <p class="model-subtitle">Similitudes y diferencias entre ambos modelos</p>
+                </div>
+                
+                <div class="comparison-container">
+                    <!-- Similitudes -->
+                    <div class="similarities-section">
+                        <div class="section-header">
+                            <i class="fas fa-equals"></i>
+                            <h3>Similitudes</h3>
+                        </div>
+                        <div class="similarities-content">
+                            <p class="intro-text">Ambos modelos comparten elementos metodológicos fundamentales que los hacen efectivos para la intervención social.</p>
+                            <div class="similarities-grid">
+                                <div class="similarity-card">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <h4>Diagnóstico Inicial Integral</h4>
+                                    <p>Ambos requieren una evaluación completa de la situación antes de la intervención</p>
+                                </div>
+                                <div class="similarity-card">
+                                    <i class="fas fa-comments"></i>
+                                    <h4>Entrevista y Contacto Directo</h4>
+                                    <p>Utilizan la entrevista como técnica principal de recolección de información</p>
+                                </div>
+                                <div class="similarity-card">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <h4>Consideración del Contexto</h4>
+                                    <p>Reconocen la importancia del entorno en la situación del individuo</p>
+                                </div>
+                                <div class="similarity-card">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <h4>Acompañamiento Continuo</h4>
+                                    <p>Proporcionan seguimiento y apoyo durante todo el proceso</p>
+                                </div>
+                                <div class="similarity-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <h4>Evaluación Sistemática</h4>
+                                    <p>Implementan procesos de evaluación y monitoreo regulares</p>
+                                </div>
+                                <div class="similarity-card">
+                                    <i class="fas fa-bullseye"></i>
+                                    <h4>Enfoque en Fortalezas</h4>
+                                    <p>Consideran las fortalezas y recursos del individuo y su entorno</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diferencias -->
+                    <div class="differences-section">
+                        <div class="section-header">
+                            <i class="fas fa-not-equal"></i>
+                            <h3>Diferencias</h3>
+                        </div>
+                        <div class="differences-content">
+                            <p class="intro-text">Las diferencias principales radican en el enfoque, el rol del profesional y la duración de la intervención.</p>
+                            <div class="comparison-table">
+                                <div class="table-header">
+                                    <div class="aspect-column">Aspecto</div>
+                                    <div class="gestion-column">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Gestión de Casos</span>
+                                    </div>
+                                    <div class="psicosocial-column">
+                                        <i class="fas fa-brain"></i>
+                                        <span>Psicosocial</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="table-row">
+                                    <div class="aspect">
+                                        <i class="fas fa-crosshairs"></i>
+                                        <span>Enfoque Principal</span>
+                                    </div>
+                                    <div class="gestion-cell">
+                                        <p>Coordinación y gestión de servicios y recursos</p>
+                                        <ul>
+                                            <li>Articulación de servicios</li>
+                                            <li>Gestión de recursos</li>
+                                            <li>Coordinación interinstitucional</li>
+                                        </ul>
+                                    </div>
+                                    <div class="psicosocial-cell">
+                                        <p>Comprensión socio-contextual y psicológica profunda</p>
+                                        <ul>
+                                            <li>Análisis del entorno</li>
+                                            <li>Dinámicas emocionales</li>
+                                            <li>Factores psicosociales</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="table-row">
+                                    <div class="aspect">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>Rol del Trabajador Social</span>
+                                    </div>
+                                    <div class="gestion-cell">
+                                        <p><strong>Gestor y Coordinador</strong></p>
+                                        <ul>
+                                            <li>Administrador de casos</li>
+                                            <li>Enlace entre servicios</li>
+                                            <li>Monitor de progreso</li>
+                                        </ul>
+                                    </div>
+                                    <div class="psicosocial-cell">
+                                        <p><strong>Facilitador Terapéutico</strong></p>
+                                        <ul>
+                                            <li>Agente de cambio</li>
+                                            <li>Facilitador de procesos</li>
+                                            <li>Acompañante terapéutico</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="table-row">
+                                    <div class="aspect">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Duración de Intervención</span>
+                                    </div>
+                                    <div class="gestion-cell">
+                                        <p><strong>Más Prolongada</strong></p>
+                                        <ul>
+                                            <li>Seguimiento a largo plazo</li>
+                                            <li>Acompañamiento continuo</li>
+                                            <li>Monitoreo permanente</li>
+                                        </ul>
+                                    </div>
+                                    <div class="psicosocial-cell">
+                                        <p><strong>Flexible y Adaptada</strong></p>
+                                        <ul>
+                                            <li>Según necesidades específicas</li>
+                                            <li>Procesos de cambio</li>
+                                            <li>Objetivos terapéuticos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="table-row">
+                                    <div class="aspect">
+                                        <i class="fas fa-bullseye"></i>
+                                        <span>Objetivo Primario</span>
+                                    </div>
+                                    <div class="gestion-cell">
+                                        <p>Acceso y coordinación de servicios</p>
+                                        <ul>
+                                            <li>Eficiencia en recursos</li>
+                                            <li>Continuidad de servicios</li>
+                                            <li>Integralidad de atención</li>
+                                        </ul>
+                                    </div>
+                                    <div class="psicosocial-cell">
+                                        <p>Transformación de dinámicas</p>
+                                        <ul>
+                                            <li>Cambio de patrones</li>
+                                            <li>Fortalecimiento emocional</li>
+                                            <li>Mejora de relaciones</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enfoque Integrado -->
+            <section id="integracion" class="model-section">
+                <div class="model-header">
+                    <div class="model-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h2>Enfoque Integrado</h2>
+                    <p class="model-subtitle">Combinación estratégica de ambos modelos para una intervención óptima</p>
+                </div>
+                
+                <div class="integration-content">
+                    <div class="integration-intro">
+                        <div class="intro-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Reflexión Grupal</h3>
+                            <p>Para nosotras, la manera más apropiada para llevar a cabo la intervención con Juliana sería la implementación de un <strong>enfoque integrado</strong> que combine los modelos psicosociales y de gestión de casos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-strategy">
+                        <div class="strategy-section">
+                            <div class="section-header">
+                                <i class="fas fa-brain"></i>
+                                <h3>Componente Psicosocial</h3>
+                            </div>
+                            <div class="strategy-content">
+                                <p class="strategy-description">El modelo psicosocial sería clave para abordar aspectos emocionales y familiares específicos.</p>
+                                <div class="strategy-areas">
+                                    <div class="area-item">
+                                        <i class="fas fa-heart-broken"></i>
+                                        <h4>Rechazo Percibido</h4>
+                                        <p>Trabajar en la percepción de rechazo social y escolar que experimenta Juliana</p>
+                                        <ul>
+                                            <li>Técnicas de reestructuración cognitiva</li>
+                                            <li>Desarrollo de habilidades sociales</li>
+                                            <li>Fortalecimiento de la resiliencia</li>
+                                        </ul>
+                                    </div>
+                                    <div class="area-item">
+                                        <i class="fas fa-heart"></i>
+                                        <h4>Fortalecimiento de Autoestima</h4>
+                                        <p>Mejorar la autoimagen y confianza personal de Juliana</p>
+                                        <ul>
+                                            <li>Reconocimiento de fortalezas personales</li>
+                                            <li>Desarrollo de autoconcepto positivo</li>
+                                            <li>Empoderamiento personal</li>
+                                        </ul>
+                                    </div>
+                                    <div class="area-item">
+                                        <i class="fas fa-comments"></i>
+                                        <h4>Comunicación Intrafamiliar</h4>
+                                        <p>Mejorar las dinámicas de comunicación en el núcleo familiar</p>
+                                        <ul>
+                                            <li>Sesiones familiares terapéuticas</li>
+                                            <li>Técnicas de comunicación asertiva</li>
+                                            <li>Resolución de conflictos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="strategy-section">
+                            <div class="section-header">
+                                <i class="fas fa-cogs"></i>
+                                <h3>Componente de Gestión de Casos</h3>
+                            </div>
+                            <div class="strategy-content">
+                                <p class="strategy-description">El modelo de gestión de casos garantizaría la articulación práctica de servicios esenciales.</p>
+                                <div class="strategy-areas">
+                                    <div class="area-item">
+                                        <i class="fas fa-hospital"></i>
+                                        <h4>Servicios Médicos</h4>
+                                        <p>Articulación con servicios de salud especializados en embarazo adolescente</p>
+                                        <ul>
+                                            <li>Control prenatal regular</li>
+                                            <li>Educación en salud reproductiva</li>
+                                            <li>Preparación para el parto</li>
+                                        </ul>
+                                    </div>
+                                    <div class="area-item">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <h4>Servicios Educativos</h4>
+                                        <p>Garantizar la continuidad del proyecto educativo de Juliana</p>
+                                        <ul>
+                                            <li>Modalidades educativas flexibles</li>
+                                            <li>Apoyo académico especializado</li>
+                                            <li>Programas de educación para madres jóvenes</li>
+                                        </ul>
+                                    </div>
+                                    <div class="area-item">
+                                        <i class="fas fa-users"></i>
+                                        <h4>Servicios Sociales</h4>
+                                        <p>Conexión con redes de apoyo y programas sociales</p>
+                                        <ul>
+                                            <li>Programas de apoyo económico</li>
+                                            <li>Grupos de madres adolescentes</li>
+                                            <li>Servicios de cuidado infantil</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-benefits">
+                        <div class="section-header">
+                            <i class="fas fa-star"></i>
+                            <h3>Beneficios del Enfoque Integrado</h3>
+                        </div>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <h4>Complementariedad</h4>
+                                <p>Cada modelo aporta fortalezas específicas que se complementan mutuamente</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-target"></i>
+                                <h4>Abordaje Integral</h4>
+                                <p>Cubre tanto aspectos emocionales como necesidades prácticas</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-sync-alt"></i>
+                                <h4>Flexibilidad</h4>
+                                <p>Permite adaptar la intervención según las necesidades cambiantes</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Efectividad Optimizada</h4>
+                                <p>Maximiza las posibilidades de éxito en la intervención</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-conclusion">
+                        <div class="conclusion-card">
+                            <i class="fas fa-quote-left"></i>
+                            <div class="conclusion-content">
+                                <p>"Esto demuestra que no existe un modelo 'perfecto' de intervención, sino que la efectividad radica en la <strong>capacidad profesional de integrar diferentes enfoques</strong> según las necesidades específicas de cada situación."</p>
+                                <div class="conclusion-highlight">
+                                    <i class="fas fa-key"></i>
+                                    <span>La clave está en la integración estratégica y la adaptación contextual</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="implementation-timeline">
+                        <div class="section-header">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Cronograma de Implementación Integrada</h3>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <h4>Fase Inicial (Semanas 1-2)</h4>
+                                    <div class="phase-activities">
+                                        <div class="activity psicosocial">
+                                            <i class="fas fa-brain"></i>
+                                            <span>Evaluación psicosocial integral</span>
+                                        </div>
+                                        <div class="activity gestion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Identificación de recursos disponibles</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <h4>Fase de Estabilización (Semanas 3-8)</h4>
+                                    <div class="phase-activities">
+                                        <div class="activity psicosocial">
+                                            <i class="fas fa-brain"></i>
+                                            <span>Intervención familiar y emocional</span>
+                                        </div>
+                                        <div class="activity gestion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Articulación de servicios médicos y educativos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <h4>Fase de Fortalecimiento (Semanas 9-20)</h4>
+                                    <div class="phase-activities">
+                                        <div class="activity psicosocial">
+                                            <i class="fas fa-brain"></i>
+                                            <span>Desarrollo de habilidades y autoestima</span>
+                                        </div>
+                                        <div class="activity gestion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Consolidación de redes de apoyo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <h4>Fase de Autonomía (Semanas 21+)</h4>
+                                    <div class="phase-activities">
+                                        <div class="activity psicosocial">
+                                            <i class="fas fa-brain"></i>
+                                            <span>Consolidación de cambios y seguimiento</span>
+                                        </div>
+                                        <div class="activity gestion">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>Transición hacia la autogestión</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Docentes</h4>
+                    <p>Karen Sofia Beltrán</p>
+                    <p>Angela Johana Vargas</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Materia</h4>
+                    <p>Teorías y Métodos De Intervención Con Individuo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Instituciones</h4>
+                    <p>Universidad Mariana - Pasto</p>
+                    <p>Universidad Luis Amigo - Medellín</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Programa De Trabajo Social</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
