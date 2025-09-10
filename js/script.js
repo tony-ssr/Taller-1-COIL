@@ -3,10 +3,11 @@
 
 // Configuración global
 const CONFIG = {
-    animationDuration: 600,
-    scrollOffset: 100,
+    animationDuration: 400, // Reducido de 600 a 400ms para mayor responsividad
+    scrollOffset: 80, // Reducido para mejor posicionamiento
     fadeInThreshold: 0.1,
-    parallaxSpeed: 0.5
+    parallaxSpeed: 0.5,
+    debounceDelay: 100 // Nuevo: delay para debounce más agresivo
 };
 
 // Estado de la aplicación
@@ -14,8 +15,22 @@ const AppState = {
     currentSection: 'case-study',
     isAnimating: false,
     scrollPosition: 0,
-    activeModel: null
+    activeModel: null,
+    lastAnimationTime: 0
 };
+
+// Reset de seguridad para el estado de animación
+function resetAnimationState() {
+    const now = Date.now();
+    // Si han pasado más de 2 segundos desde la última animación, resetear el estado
+    if (AppState.isAnimating && (now - AppState.lastAnimationTime) > 2000) {
+        console.warn('🔄 Reseteando estado de animación bloqueado');
+        AppState.isAnimating = false;
+    }
+}
+
+// Verificar estado cada segundo
+setInterval(resetAnimationState, 1000);
 
 // Inicialización de la aplicación
 document.addEventListener('DOMContentLoaded', function() {
@@ -74,14 +89,16 @@ function setupEventListeners() {
         });
     }
     
-    // Navegación entre secciones
+    // Navegación entre secciones con prevención de eventos duplicados
     const navBtns = document.querySelectorAll('.nav-btn');
     navBtns.forEach(button => {
-        button.addEventListener('click', handleNavigation);
+        // Remover listeners existentes para evitar duplicados
+        button.removeEventListener('click', handleNavigation);
+        button.addEventListener('click', handleNavigation, { passive: false });
     });
     
-    // Scroll suave
-    document.addEventListener('scroll', handleScroll);
+    // Scroll suave con throttling
+    document.addEventListener('scroll', throttle(handleScroll, 16)); // ~60fps
     
     // Interacciones con modelos
     const modelCards = document.querySelectorAll('.model-card');
@@ -107,33 +124,55 @@ function setupEventListeners() {
 // Manejo de navegación
 function handleNavigation(event) {
     event.preventDefault();
+    event.stopPropagation();
     
-    if (AppState.isAnimating) return;
+    // Prevenir múltiples clics rápidos
+    if (AppState.isAnimating) {
+        console.log('⚠️ Navegación en progreso, ignorando clic');
+        return;
+    }
     
-    const targetId = event.target.getAttribute('data-target');
+    const button = event.target.closest('.nav-btn');
+    if (!button) return;
+    
+    const targetId = button.getAttribute('data-target');
     const targetSection = document.getElementById(targetId);
     
-    if (!targetSection) return;
+    if (!targetSection) {
+        console.warn('⚠️ Sección no encontrada:', targetId);
+        return;
+    }
     
+    // Marcar como animando inmediatamente
     AppState.isAnimating = true;
     AppState.currentSection = targetId;
+    AppState.lastAnimationTime = Date.now();
     
-    // Ocultar todas las secciones
-    const allSections = document.querySelectorAll('.model-section');
-    allSections.forEach(section => {
-        section.classList.remove('active');
-    });
+    // Feedback visual inmediato
+    button.classList.add('clicked');
+    setTimeout(() => button.classList.remove('clicked'), 150);
     
-    // Mostrar la sección seleccionada
-    targetSection.classList.add('active');
-    
-    // Actualizar botón activo
-    updateActiveNavButton(targetId);
-    
-    // Scroll suave a la sección
-    smoothScrollTo(targetSection, () => {
-        AppState.isAnimating = false;
-        triggerSectionAnimation(targetSection);
+    // Ocultar todas las secciones de forma más eficiente
+    requestAnimationFrame(() => {
+        const allSections = document.querySelectorAll('.model-section');
+        allSections.forEach(section => {
+            if (section !== targetSection) {
+                section.classList.remove('active');
+            }
+        });
+        
+        // Mostrar la sección seleccionada
+        targetSection.classList.add('active');
+        
+        // Actualizar botón activo
+        updateActiveNavButton(targetId);
+        
+        // Scroll suave a la sección con timeout reducido
+         smoothScrollTo(targetSection, () => {
+             AppState.isAnimating = false;
+             AppState.lastAnimationTime = Date.now();
+             triggerSectionAnimation(targetSection);
+         });
     });
 }
 
@@ -148,28 +187,48 @@ function updateActiveNavButton(targetId) {
     });
 }
 
-// Scroll suave personalizado
+// Scroll suave personalizado optimizado
 function smoothScrollTo(target, callback) {
     const targetPosition = target.offsetTop - CONFIG.scrollOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
+    
+    // Si la distancia es muy pequeña, ir directamente
+    if (Math.abs(distance) < 10) {
+        window.scrollTo(0, targetPosition);
+        if (callback) {
+            setTimeout(callback, 50);
+        }
+        return;
+    }
+    
     const duration = CONFIG.animationDuration;
     let start = null;
+    let animationId = null;
     
     function animation(currentTime) {
         if (start === null) start = currentTime;
         const timeElapsed = currentTime - start;
         const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        
         window.scrollTo(0, run);
         
         if (timeElapsed < duration) {
-            requestAnimationFrame(animation);
+            animationId = requestAnimationFrame(animation);
         } else {
-            if (callback) callback();
+            window.scrollTo(0, targetPosition); // Asegurar posición final exacta
+            if (callback) {
+                setTimeout(callback, 50); // Pequeño delay para asegurar que el DOM se actualice
+            }
         }
     }
     
-    requestAnimationFrame(animation);
+    // Cancelar animación anterior si existe
+    if (window.currentScrollAnimation) {
+        cancelAnimationFrame(window.currentScrollAnimation);
+    }
+    
+    window.currentScrollAnimation = requestAnimationFrame(animation);
 }
 
 // Función de easing
@@ -621,12 +680,38 @@ function navigateToPreviousSection() {
 
 // Navegar a sección específica
 function navigateToSection(sectionId) {
+    // Prevenir navegación si ya está animando
+    if (AppState.isAnimating) {
+        console.log('⚠️ Navegación programática bloqueada - animación en progreso');
+        return false;
+    }
+    
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
+        AppState.isAnimating = true;
         AppState.currentSection = sectionId;
+        AppState.lastAnimationTime = Date.now();
+        
+        // Ocultar otras secciones
+        const allSections = document.querySelectorAll('.model-section');
+        allSections.forEach(section => {
+            if (section !== targetSection) {
+                section.classList.remove('active');
+            }
+        });
+        
+        targetSection.classList.add('active');
         updateActiveNavButton(sectionId);
-        smoothScrollTo(targetSection);
+        
+        smoothScrollTo(targetSection, () => {
+            AppState.isAnimating = false;
+            AppState.lastAnimationTime = Date.now();
+            triggerSectionAnimation(targetSection);
+        });
+        
+        return true;
     }
+    return false;
 }
 
 // Ocultar todos los modales
@@ -686,15 +771,48 @@ function isElementInViewport(element) {
 }
 
 // Función de debounce
+// Función debounce optimizada
 function debounce(func, wait) {
     let timeout;
+    let lastCallTime = 0;
+    
     return function executedFunction(...args) {
+        const now = Date.now();
+        
         const later = () => {
             clearTimeout(timeout);
-            func(...args);
+            timeout = null;
+            lastCallTime = now;
+            func.apply(this, args);
         };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+        
+        // Si han pasado suficiente tiempo desde la última llamada, ejecutar inmediatamente
+        if (now - lastCallTime > wait * 2) {
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            lastCallTime = now;
+            func.apply(this, args);
+        } else {
+            // De lo contrario, usar debounce normal
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            timeout = setTimeout(later, wait);
+        }
+    };
+}
+
+// Función throttle para eventos de alta frecuencia
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
     };
 }
 
@@ -853,7 +971,9 @@ function handleNavResize() {
 }
 
 // Agregar listener para cambios de tamaño
-window.addEventListener('resize', debounce(handleNavResize, 250));
+// Event listeners optimizados
+window.addEventListener('resize', debounce(handleNavResize, CONFIG.debounceDelay));
+window.addEventListener('resize', debounce(handleResize, CONFIG.debounceDelay));
 
 window.MyMelodyMap = {
     navigateToSection,
