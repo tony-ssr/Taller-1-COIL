@@ -33,6 +33,9 @@ function initializeApp() {
     // Configurar navegación inicial
     updateActiveNavButton('case-study');
     
+    // Configurar estado inicial del menú responsive
+    handleNavResize();
+    
     // Aplicar animaciones de entrada
     setTimeout(() => {
         document.querySelector('.main-header').classList.add('animate-fade-in');
@@ -780,6 +783,9 @@ function toggleMobileNav() {
         navToggle.classList.toggle('active');
         navButtons.classList.toggle('show');
         
+        // Remover cualquier estilo inline que pueda interferir
+        navButtons.style.display = '';
+        
         // Agregar aria-expanded para accesibilidad
         const isExpanded = navButtons.classList.contains('show');
         navToggle.setAttribute('aria-expanded', isExpanded);
@@ -800,6 +806,7 @@ function closeMobileNav() {
     if (navToggle && navButtons) {
         navToggle.classList.remove('active');
         navButtons.classList.remove('show');
+        navButtons.style.display = ''; // Remover estilo inline
         navToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
@@ -812,6 +819,7 @@ function openMobileNav() {
     if (navToggle && navButtons) {
         navToggle.classList.add('active');
         navButtons.classList.add('show');
+        navButtons.style.display = ''; // Remover estilo inline
         navToggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
     }
@@ -826,7 +834,7 @@ function handleNavResize() {
         // En pantallas grandes, mostrar siempre la navegación
         if (navButtons) {
             navButtons.classList.remove('show');
-            navButtons.style.display = 'flex';
+            navButtons.style.display = ''; // Remover estilo inline para que CSS tome control
         }
         if (navToggle) {
             navToggle.classList.remove('active');
@@ -834,9 +842,12 @@ function handleNavResize() {
         }
         document.body.style.overflow = '';
     } else {
-        // En pantallas pequeñas, ocultar por defecto
-        if (navButtons && !navButtons.classList.contains('show')) {
-            navButtons.style.display = 'none';
+        // En pantallas pequeñas, remover estilos inline y dejar que CSS maneje
+        if (navButtons) {
+            navButtons.style.display = ''; // Remover estilo inline
+            if (!navButtons.classList.contains('show')) {
+                navButtons.classList.remove('show'); // Asegurar que esté oculto
+            }
         }
     }
 }
